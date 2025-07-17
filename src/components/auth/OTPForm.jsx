@@ -48,6 +48,22 @@ const OTPForm = ({ onBack }) => {
     }
   }, [error, dispatch]);
 
+  const submitOTP = async (otpString) => {
+    if (otpString.length !== 6) {
+      toast.error('Please enter complete OTP');
+      return;
+    }
+
+    try {
+      await dispatch(verifyOTP({ phoneNumber, otp: otpString })).unwrap();
+      toast.success('Login successful!');
+    } catch (err) {
+      toast.error(err.message || 'Invalid OTP');
+      setOtp(['', '', '', '', '', '']);
+      inputRefs.current[0]?.focus();
+    }
+  };
+
   const handleOtpChange = (index, value) => {
     if (!/^\d*$/.test(value)) return;
 
@@ -63,7 +79,7 @@ const OTPForm = ({ onBack }) => {
     }
 
     if (otpString.length === 6) {
-      handleSubmit(onSubmit)();
+      submitOTP(otpString);
     }
   };
 
@@ -75,19 +91,7 @@ const OTPForm = ({ onBack }) => {
 
   const onSubmit = async () => {
     const otpString = otp.join('');
-    if (otpString.length !== 6) {
-      toast.error('Please enter complete OTP');
-      return;
-    }
-
-    try {
-      await dispatch(verifyOTP({ phoneNumber, otp: otpString })).unwrap();
-      toast.success('Login successful!');
-    } catch (err) {
-      toast.error(err.message || 'Invalid OTP');
-      setOtp(['', '', '', '', '', '']);
-      inputRefs.current[0]?.focus();
-    }
+    submitOTP(otpString);
   };
 
   const handleResendOTP = async () => {
@@ -128,7 +132,6 @@ const OTPForm = ({ onBack }) => {
 
         <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {/* OTP Input */}
             <div className="flex justify-center space-x-3">
               {otp.map((digit, index) => (
                 <input
@@ -150,7 +153,6 @@ const OTPForm = ({ onBack }) => {
               <p className="text-center text-sm text-red-600">{errors.otp.message}</p>
             )}
 
-            {/* Verify Button */}
             <button
               type="submit"
               disabled={isLoading}
@@ -166,7 +168,6 @@ const OTPForm = ({ onBack }) => {
               )}
             </button>
 
-            {/* Resend OTP */}
             <div className="text-center">
               {canResend ? (
                 <button
@@ -184,7 +185,6 @@ const OTPForm = ({ onBack }) => {
               )}
             </div>
 
-            {/* Back Button */}
             <button
               type="button"
               onClick={onBack}
