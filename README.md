@@ -2,7 +2,7 @@
 
 A fully functional, responsive, and visually appealing frontend for a Gemini-style conversational AI chat application built with React and Redux Toolkit.
 
-## 🚀 Features
+## Features
 
 ### Authentication
 - OTP-based login/signup with country code selection
@@ -33,7 +33,7 @@ A fully functional, responsive, and visually appealing frontend for a Gemini-sty
 - LocalStorage persistence
 - Throttled AI responses for realism
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: React 18
 - **State Management**: Redux Toolkit
@@ -43,7 +43,7 @@ A fully functional, responsive, and visually appealing frontend for a Gemini-sty
 - **Notifications**: React Hot Toast
 - **Routing**: React Router DOM
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -63,7 +63,7 @@ npm run dev
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -95,7 +95,7 @@ src/
 └── index.css
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 No environment variables required for basic functionality. The app uses:
@@ -108,7 +108,7 @@ No environment variables required for basic functionality. The app uses:
 - Adjust theme colors in `tailwind.config.js`
 - Update typing delays and animations in component files
 
-## 🎯 Key Implementations
+## Key Implementations
 
 ### Form Validation
 ```javascript
@@ -157,12 +157,12 @@ useEffect(() => {
 }, [searchInput, dispatch]);
 ```
 
-## 🔐 Demo Credentials
+## Demo Credentials
 
 - **Phone Number**: Any valid number with country code
 - **OTP**: `123456` (for demo purposes)
 
-## 🎨 Features Showcase
+## Features Showcase
 
 - **Responsive Design**: Works seamlessly on desktop and mobile
 - **Dark Mode**: Toggle between light and dark themes
