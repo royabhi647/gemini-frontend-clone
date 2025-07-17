@@ -90,8 +90,8 @@ src/
 │   ├── storage.js
 │   ├── constants.js
 │   └── helpers.js
-├── App.js
-├── index.js
+├── App.jsx
+├── main.jsx
 └── index.css
 ```
 
