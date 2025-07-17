@@ -1,4 +1,3 @@
-// README.md content
 # Gemini Frontend Clone
 
 A fully functional, responsive, and visually appealing frontend for a Gemini-style conversational AI chat application built with React and Redux Toolkit.
@@ -48,7 +47,7 @@ A fully functional, responsive, and visually appealing frontend for a Gemini-sty
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/royabhi647/gemini-frontend-clone.git
 cd gemini-frontend-clone
 ```
 
@@ -59,10 +58,10 @@ npm install
 
 3. Start the development server:
 ```bash
-npm start
+npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 🏗️ Project Structure
 
@@ -158,21 +157,6 @@ useEffect(() => {
 }, [searchInput, dispatch]);
 ```
 
-## 🚀 Deployment
-
-1. Build the project:
-```bash
-npm run build
-```
-
-2. Deploy to Vercel:
-```bash
-npm i -g vercel
-vercel --prod
-```
-
-Or deploy to Netlify by dragging the `build` folder to Netlify's deploy interface.
-
 ## 🔐 Demo Credentials
 
 - **Phone Number**: Any valid number with country code
@@ -194,10 +178,3 @@ The app is fully responsive with:
 - Touch-friendly interface
 - Optimized chat bubbles
 - Mobile-first design approach
-
-## 🙏 Acknowledgments
-
-- REST Countries API for country data
-- Tailwind CSS for styling
-- Lucide React for icons
-- React ecosystem for robust tooling
